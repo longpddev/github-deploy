@@ -72,9 +72,10 @@ jobs:
       with:
         name: node-app
         path: deploy.zip
-      
+    - name: Display structure of downloaded files
+      run: ls -la
     - name: Unzip artifact from
-      run: unzip deploy.zip -d .
+      run: unzip ./deploy.zip -d .
         
     - name: Display structure of downloaded files
       run: ls -la
