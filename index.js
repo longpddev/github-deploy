@@ -1,7 +1,8 @@
 const app = require('express')()
+const fs = require('fs')
 const port = process.env.PORT || 3000
 app.get('/', (req, res) => {
-  res.send('hello worlds fjkshdfkjhs ')
+  res.send(fs.readFileSync('./.env', { encoding: 'utf-8'}))
 })
 
 app.listen(port, () => {

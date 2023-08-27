@@ -73,6 +73,10 @@ jobs:
         name: node-app
     - name: Unzip project
       run: unzip deploy.zip -d . && rm -f deploy.zip
+    - name: Add env
+      run: |
+        echo "${{ secrets.APP_ENV}}" >> "./.env"
+        cat .env
         
     - name: Display structure of downloaded files
       run: ls -R
